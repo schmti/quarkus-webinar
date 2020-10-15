@@ -11,6 +11,21 @@ You need:
 5. Docker or Podman installed (in this webinar Docker is used) ([Click for Instructions](https://docs.docker.com/engine/install/fedora/))
 6. A running OpenShift-Cluster ([Click to Learn More](https://www.openshift.com/try))
 
+#### Export JAVA_HOME and GRAALVM_HOME
+```bash
+~$: JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.8.10-2.fc32.x86_64
+~$: PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+~$: export JAVA_HOME
+~$: export PATH
+~$: GRAALVM_HOME=/usr/lib/graalvm-ce-java11-20.2.0
+~$: PATH=$PATH:$HOME/bin:$GRAALVM_HOME/bin
+~$: export GRAALVM_HOME
+~$: export PATH
+~$: export JAVA_HOME=${GRAALVM_HOME}
+~$: export PATH=${GRAALVM_HOME}/bin:$PATH
+
+````
+
 ## 1. Deploy Quarkus Using OpenShift-Extension
 To add the OpenShift extension to an existing project, enter the following command:
 ```bash
@@ -106,12 +121,14 @@ Use:
 ```
 
 ## More links:
-*[RedHat Documenation](https://access.redhat.com/documentation/en-us/red_hat_build_of_quarkus/1.3/html-single/deploying_quarkus_applications_on_red_hat_openshift_container_platform/index)
-*[Quarkus Documenation: getting-started](https://quarkus.io/guides/getting-started)
-*[Quarkus Documenation: building-native-image](https://quarkus.io/guides/building-native-image)
-*[Quarkus Documenation: container-image](https://quarkus.io/guides/container-image)
-*[Quarkus Documenation: deploying-to-openshift](https://quarkus.io/guides/deploying-to-openshift)
-*[Quarkus Documenation: deploying-to-openshift-s2i](https://quarkus.pro/guides/deploying-to-openshift-s2i.html)
+
+
+* [RedHat Documenation](https://access.redhat.com/documentation/en-us/red_hat_build_of_quarkus/1.3/html-single/deploying_quarkus_applications_on_red_hat_openshift_container_platform/index)
+* [Quarkus Documenation: getting-started](https://quarkus.io/guides/getting-started)
+* [Quarkus Documenation: building-native-image](https://quarkus.io/guides/building-native-image)
+* [Quarkus Documenation: container-image](https://quarkus.io/guides/container-image)
+* [Quarkus Documenation: deploying-to-openshift](https://quarkus.io/guides/deploying-to-openshift)
+* [Quarkus Documenation: deploying-to-openshift-s2i](https://quarkus.pro/guides/deploying-to-openshift-s2i.html)
 
 
 # webinar-demo project (Quarkus basics)
