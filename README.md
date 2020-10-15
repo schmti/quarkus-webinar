@@ -105,6 +105,13 @@ Use:
 ~:$ ./mvnw package -Pnative -Dquarkus.native.container-build=true -Dquarkus.container-image.build=true -Dquarkus.container-image.push=true
 ```
 
+## More links:
+[RedHat Documenation](https://access.redhat.com/documentation/en-us/red_hat_build_of_quarkus/1.3/html-single/deploying_quarkus_applications_on_red_hat_openshift_container_platform/index)
+[Quarkus Documenation](https://quarkus.io/guides/getting-started)
+[Quarkus Documenation](https://quarkus.io/guides/building-native-image)
+[Quarkus Documenation](https://quarkus.io/guides/container-image)
+[Quarkus Documenation](https://quarkus.io/guides/deploying-to-openshift)
+[Quarkus Documenation](https://quarkus.pro/guides/deploying-to-openshift-s2i.html)
 
 
 # webinar-demo project (Quarkus basics)
