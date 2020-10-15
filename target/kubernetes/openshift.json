@@ -1,0 +1,232 @@
+{
+  "apiVersion" : "v1",
+  "kind" : "ServiceAccount",
+  "metadata" : {
+    "annotations" : {
+      "app.quarkus.io/build-timestamp" : "2020-10-15 - 11:36:37 +0000",
+      "app.openshift.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git",
+      "app.quarkus.io/commit-id" : "83e3379e187c3e85097ff72fdddfadd73f0202db",
+      "app.quarkus.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "webinar-demo"
+  }
+}{
+  "apiVersion" : "v1",
+  "kind" : "Service",
+  "metadata" : {
+    "annotations" : {
+      "app.quarkus.io/build-timestamp" : "2020-10-15 - 11:36:37 +0000",
+      "app.openshift.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git",
+      "app.quarkus.io/commit-id" : "83e3379e187c3e85097ff72fdddfadd73f0202db",
+      "app.quarkus.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "webinar-demo"
+  },
+  "spec" : {
+    "ports" : [ {
+      "name" : "http",
+      "port" : 8080,
+      "targetPort" : 8080
+    } ],
+    "selector" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
+    },
+    "type" : "ClusterIP"
+  }
+}{
+  "apiVersion" : "image.openshift.io/v1",
+  "kind" : "ImageStream",
+  "metadata" : {
+    "annotations" : {
+      "app.quarkus.io/build-timestamp" : "2020-10-15 - 11:36:37 +0000",
+      "app.openshift.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git",
+      "app.quarkus.io/commit-id" : "83e3379e187c3e85097ff72fdddfadd73f0202db",
+      "app.quarkus.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "openjdk-11-rhel7"
+  },
+  "spec" : {
+    "dockerImageRepository" : "registry.access.redhat.com/openjdk/openjdk-11-rhel7"
+  }
+}{
+  "apiVersion" : "image.openshift.io/v1",
+  "kind" : "ImageStream",
+  "metadata" : {
+    "annotations" : {
+      "app.quarkus.io/build-timestamp" : "2020-10-15 - 11:36:37 +0000",
+      "app.openshift.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git",
+      "app.quarkus.io/commit-id" : "83e3379e187c3e85097ff72fdddfadd73f0202db",
+      "app.quarkus.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "webinar-demo"
+  },
+  "spec" : { }
+}{
+  "apiVersion" : "build.openshift.io/v1",
+  "kind" : "BuildConfig",
+  "metadata" : {
+    "annotations" : {
+      "app.quarkus.io/build-timestamp" : "2020-10-15 - 11:36:37 +0000",
+      "app.openshift.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git",
+      "app.quarkus.io/commit-id" : "83e3379e187c3e85097ff72fdddfadd73f0202db",
+      "app.quarkus.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "webinar-demo"
+  },
+  "spec" : {
+    "output" : {
+      "to" : {
+        "kind" : "ImageStreamTag",
+        "name" : "webinar-demo:1.0.0-SNAPSHOT"
+      }
+    },
+    "source" : {
+      "binary" : { }
+    },
+    "strategy" : {
+      "sourceStrategy" : {
+        "from" : {
+          "kind" : "ImageStreamTag",
+          "name" : "openjdk-11-rhel7:latest"
+        }
+      }
+    }
+  }
+}{
+  "apiVersion" : "apps.openshift.io/v1",
+  "kind" : "DeploymentConfig",
+  "metadata" : {
+    "annotations" : {
+      "app.quarkus.io/build-timestamp" : "2020-10-15 - 11:36:37 +0000",
+      "app.openshift.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git",
+      "app.quarkus.io/commit-id" : "83e3379e187c3e85097ff72fdddfadd73f0202db",
+      "app.quarkus.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "webinar-demo"
+  },
+  "spec" : {
+    "replicas" : 1,
+    "selector" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT"
+    },
+    "template" : {
+      "metadata" : {
+        "annotations" : {
+          "app.quarkus.io/build-timestamp" : "2020-10-15 - 11:36:37 +0000",
+          "app.openshift.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git",
+          "app.quarkus.io/commit-id" : "83e3379e187c3e85097ff72fdddfadd73f0202db",
+          "app.quarkus.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git"
+        },
+        "labels" : {
+          "app.kubernetes.io/name" : "webinar-demo",
+          "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+          "app.openshift.io/runtime" : "quarkus"
+        }
+      },
+      "spec" : {
+        "containers" : [ {
+          "env" : [ {
+            "name" : "KUBERNETES_NAMESPACE",
+            "valueFrom" : {
+              "fieldRef" : {
+                "fieldPath" : "metadata.namespace"
+              }
+            }
+          }, {
+            "name" : "JAVA_CLASSPATH",
+            "value" : "/deployments/lib/io.quarkus.quarkus-security-runtime-spi-1.8.3.Final.jar:/deployments/lib/io.quarkus.quarkus-development-mode-spi-1.8.3.Final.jar:/deployments/lib/org.reactivestreams.reactive-streams-1.0.3.jar:/deployments/lib/io.smallrye.reactive.mutiny-0.7.0.jar:/deployments/lib/io.quarkus.security.quarkus-security-1.1.2.Final.jar:/deployments/lib/jakarta.el.jakarta.el-api-3.0.3.jar:/deployments/lib/jakarta.interceptor.jakarta.interceptor-api-1.2.5.jar:/deployments/lib/jakarta.enterprise.jakarta.enterprise.cdi-api-2.0.2.jar:/deployments/lib/io.netty.netty-codec-4.1.49.Final.jar:/deployments/lib/io.netty.netty-handler-4.1.49.Final.jar:/deployments/lib/io.quarkus.quarkus-netty-1.8.3.Final.jar:/deployments/lib/io.netty.netty-common-4.1.49.Final.jar:/deployments/lib/io.netty.netty-buffer-4.1.49.Final.jar:/deployments/lib/io.netty.netty-transport-4.1.49.Final.jar:/deployments/lib/io.netty.netty-codec-socks-4.1.49.Final.jar:/deployments/lib/io.netty.netty-handler-proxy-4.1.49.Final.jar:/deployments/lib/io.netty.netty-codec-http-4.1.49.Final.jar:/deployments/lib/io.netty.netty-codec-http2-4.1.49.Final.jar:/deployments/lib/io.netty.netty-resolver-4.1.49.Final.jar:/deployments/lib/io.netty.netty-codec-dns-4.1.49.Final.jar:/deployments/lib/io.netty.netty-resolver-dns-4.1.49.Final.jar:/deployments/lib/com.fasterxml.jackson.core.jackson-core-2.11.2.jar:/deployments/lib/io.vertx.vertx-core-3.9.2.jar:/deployments/lib/io.quarkus.quarkus-vertx-core-1.8.3.Final.jar:/deployments/lib/io.vertx.vertx-web-common-3.9.2.jar:/deployments/lib/io.vertx.vertx-auth-common-3.9.2.jar:/deployments/lib/io.vertx.vertx-bridge-common-3.9.2.jar:/deployments/lib/io.vertx.vertx-web-3.9.2.jar:/deployments/lib/io.quarkus.quarkus-vertx-http-1.8.3.Final.jar:/deployments/lib/org.jboss.spec.javax.ws.rs.jboss-jaxrs-api_2.1_spec-2.0.1.Final.jar:/deployments/lib/org.jboss.spec.javax.xml.bind.jboss-jaxb-api_2.3_spec-2.0.0.Final.jar:/deployments/lib/org.jboss.resteasy.resteasy-core-spi-4.5.6.Final.jar:/deployments/lib/com.ibm.async.asyncutil-0.1.0.jar:/deployments/lib/org.eclipse.microprofile.config.microprofile-config-api-1.4.jar:/deployments/lib/org.jboss.resteasy.resteasy-core-4.5.6.Final.jar:/deployments/lib/com.sun.activation.jakarta.activation-1.2.1.jar:/deployments/lib/io.quarkus.quarkus-resteasy-common-1.8.3.Final.jar:/deployments/lib/jakarta.validation.jakarta.validation-api-2.0.2.jar:/deployments/lib/io.quarkus.quarkus-resteasy-server-common-1.8.3.Final.jar:/deployments/lib/io.quarkus.quarkus-resteasy-1.8.3.Final.jar:/deployments/lib/jakarta.annotation.jakarta.annotation-api-1.3.5.jar:/deployments/lib/jakarta.transaction.jakarta.transaction-api-1.3.3.jar:/deployments/lib/org.jboss.logging.jboss-logging-3.4.1.Final.jar:/deployments/lib/io.quarkus.arc.arc-1.8.3.Final.jar:/deployments/lib/jakarta.inject.jakarta.inject-api-1.0.jar:/deployments/lib/io.smallrye.common.smallrye-common-annotation-1.3.0.jar:/deployments/lib/io.smallrye.config.smallrye-config-common-1.8.6.jar:/deployments/lib/io.smallrye.common.smallrye-common-function-1.1.0.jar:/deployments/lib/io.smallrye.common.smallrye-common-expression-1.1.0.jar:/deployments/lib/io.smallrye.common.smallrye-common-constraint-1.1.0.jar:/deployments/lib/io.smallrye.config.smallrye-config-1.8.6.jar:/deployments/lib/org.jboss.logmanager.jboss-logmanager-embedded-1.0.4.jar:/deployments/lib/org.jboss.logging.jboss-logging-annotations-2.1.0.Final.jar:/deployments/lib/org.jboss.threads.jboss-threads-3.1.1.Final.jar:/deployments/lib/org.slf4j.slf4j-api-1.7.30.jar:/deployments/lib/org.jboss.slf4j.slf4j-jboss-logging-1.2.0.Final.jar:/deployments/lib/org.graalvm.sdk.graal-sdk-20.2.0.jar:/deployments/lib/org.wildfly.common.wildfly-common-1.5.4.Final-format-001.jar:/deployments/lib/io.quarkus.quarkus-bootstrap-runner-1.8.3.Final.jar:/deployments/lib/io.quarkus.quarkus-core-1.8.3.Final.jar:/deployments/lib/org.eclipse.microprofile.context-propagation.microprofile-context-propagation-api-1.0.1.jar:/deployments/lib/io.quarkus.quarkus-arc-1.8.3.Final.jar:/deployments/lib/io.quarkus.quarkus-kubernetes-client-internal-1.8.3.Final.jar:/deployments/lib/io.quarkus.quarkus-openshift-1.8.3.Final.jar"
+          }, {
+            "name" : "JAVA_OPTIONS",
+            "value" : "-Djava.util.logging.manager=org.jboss.logmanager.LogManager"
+          }, {
+            "name" : "JAVA_APP_JAR",
+            "value" : "/deployments/webinar-demo-1.0.0-SNAPSHOT-runner.jar"
+          }, {
+            "name" : "JAVA_LIB_DIR",
+            "value" : "/deployments/lib"
+          } ],
+          "image" : "schmti/webinar-demo:1.0.0-SNAPSHOT",
+          "imagePullPolicy" : "IfNotPresent",
+          "name" : "webinar-demo",
+          "ports" : [ {
+            "containerPort" : 8080,
+            "name" : "http",
+            "protocol" : "TCP"
+          } ]
+        } ],
+        "serviceAccount" : "webinar-demo"
+      }
+    },
+    "triggers" : [ {
+      "imageChangeParams" : {
+        "automatic" : true,
+        "containerNames" : [ "webinar-demo" ],
+        "from" : {
+          "kind" : "ImageStreamTag",
+          "name" : "webinar-demo:1.0.0-SNAPSHOT"
+        }
+      },
+      "type" : "ImageChange"
+    } ]
+  }
+}{
+  "apiVersion" : "route.openshift.io/v1",
+  "kind" : "Route",
+  "metadata" : {
+    "annotations" : {
+      "app.quarkus.io/build-timestamp" : "2020-10-15 - 11:36:37 +0000",
+      "app.openshift.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git",
+      "app.quarkus.io/commit-id" : "83e3379e187c3e85097ff72fdddfadd73f0202db",
+      "app.quarkus.io/vcs-url" : "https://github.com/schmti/quarkus-webinar.git"
+    },
+    "labels" : {
+      "app.kubernetes.io/name" : "webinar-demo",
+      "app.kubernetes.io/version" : "1.0.0-SNAPSHOT",
+      "app.openshift.io/runtime" : "quarkus"
+    },
+    "name" : "webinar-demo"
+  },
+  "spec" : {
+    "host" : "",
+    "path" : "/",
+    "port" : {
+      "targetPort" : 8080
+    },
+    "to" : {
+      "kind" : "Service",
+      "name" : "webinar-demo"
+    }
+  }
+}
