@@ -106,12 +106,12 @@ Use:
 ```
 
 ## More links:
-[RedHat Documenation](https://access.redhat.com/documentation/en-us/red_hat_build_of_quarkus/1.3/html-single/deploying_quarkus_applications_on_red_hat_openshift_container_platform/index)
-[Quarkus Documenation](https://quarkus.io/guides/getting-started)
-[Quarkus Documenation](https://quarkus.io/guides/building-native-image)
-[Quarkus Documenation](https://quarkus.io/guides/container-image)
-[Quarkus Documenation](https://quarkus.io/guides/deploying-to-openshift)
-[Quarkus Documenation](https://quarkus.pro/guides/deploying-to-openshift-s2i.html)
+*[RedHat Documenation](https://access.redhat.com/documentation/en-us/red_hat_build_of_quarkus/1.3/html-single/deploying_quarkus_applications_on_red_hat_openshift_container_platform/index)
+*[Quarkus Documenation: getting-started](https://quarkus.io/guides/getting-started)
+*[Quarkus Documenation: building-native-image](https://quarkus.io/guides/building-native-image)
+*[Quarkus Documenation: container-image](https://quarkus.io/guides/container-image)
+*[Quarkus Documenation: deploying-to-openshift](https://quarkus.io/guides/deploying-to-openshift)
+*[Quarkus Documenation: deploying-to-openshift-s2i](https://quarkus.pro/guides/deploying-to-openshift-s2i.html)
 
 
 # webinar-demo project (Quarkus basics)
